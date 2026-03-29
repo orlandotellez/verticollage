@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VertiCollage
 
-## Getting Started
+Una aplicación web para crear collages verticales a partir de múltiples imágenes. Construida con Next.js y React, procesa todo en el navegador usando la API de Canvas — no requiere backend.
 
-First, run the development server:
+## Características
+
+- **Subir imágenes** - Arrastra y suelta o haz clic para seleccionar múltiples imágenes
+- **Reordenar** - Mueve las imágenes hacia arriba o abajo para cambiar su posición
+- **Configuración flexible** - Ajusta el ancho del collage y el espacio entre imágenes
+- **Múltiples formatos** - Exporta en PNG, JPG o WebP
+- **Tema claro/oscuro** - Cambio de tema automático según tu preferencia
+
+## Tecnologías
+
+- [Next.js 16](https://nextjs.org) — Framework de React con App Router
+- [React 19](https://react.dev) — Biblioteca de UI
+- [TypeScript](https://www.typescriptlang.org) — Tipado estático
+- [CSS Modules](https://nextjs.org/docs/app/building-your-application/styling/css-modules) — Estilos por componente
+- [Lucide React](https://lucide.dev) — Iconos
+
+## Requisitos
+
+- Node.js 18+
+- pnpm (o npm/yarn/bun)
+
+## Instalación
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clonar el repositorio
+git clone https://github.com/orlandotellez/verticollage
+cd verticollage
+
+# Instalar dependencias
+pnpm install
+
+# Iniciar servidor de desarrollo
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts Disponibles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando | Descripción |
+|---------|-------------|
+| `pnpm dev` | Inicia el servidor de desarrollo |
+| `pnpm build` | Crea la build de producción |
+| `pnpm start` | Inicia el servidor de producción |
+| `pnpm lint` | Ejecuta ESLint |
 
-## Learn More
+## Estructura del Proyecto
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── components/
+│   ├── index/              # Componentes principales
+│   │   ├── ImageUploader   # Carga de imágenes
+│   │   ├── ImagePreview    # Vista previa y reordenado
+│   │   ├── CollageConfig   # Configuración del collage
+│   │   └── FormatSelector  # Selección de formato
+│   └── common/             # Componentes compartidos
+│       └── IconTheme       # Botón de cambio de tema
+├── context/
+│   └── ThemeContext        # Contexto de tema claro/oscuro
+├── providers/
+│   └── Providers           # Proveedores de la aplicación
+├── utils/
+│   └── imageProcessor      # Procesamiento de imágenes con Canvas
+├── types/
+│   └── index.d.ts          # Tipos de TypeScript
+└── assets/
+    └── svgs                # Assets estáticos
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Cómo Contribuir
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Haz un fork** del repositorio
+2. Crea una rama nueva: `git checkout -b tu-rama`
+3. Haz tus cambios y commitea: `git commit -m 'Tu mensaje'`
+4. Push a tu rama: `git push origin tu-rama`
+5. Abre un Pull Request
 
-## Deploy on Vercel
+### Guías de estilo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Usamos ESLint para mantener consistencia de código
+- TypeScript estricto habilitado
+- CSS Modules para estilos (sin Tailwind en componentes)
+- Nombres de componentes en PascalCase
+- Archivos de estilos en `*.module.css`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licencia
+
+MIT License — libre para usar y modificar.
+
+---
+
+¿Encontraste un bug? ¿Tenés una idea? Abrí un [issue](https://github.com/orlandotellez/verticollage/issues) y lo vemos.
