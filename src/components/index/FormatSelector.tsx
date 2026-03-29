@@ -1,4 +1,4 @@
-import { ImageFormat } from '../utils/imageProcessor';
+import { ImageFormat } from '@/src/utils/imageProcessor';
 import styles from './FormatSelector.module.css';
 
 interface FormatSelectorProps {
