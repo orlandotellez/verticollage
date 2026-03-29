@@ -1,0 +1,42 @@
+.container {
+  background-color: var(--card-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--font-color-title);
+  margin-bottom: 1rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.radio {
+  width: 1rem;
+  height: 1rem;
+  color: #2563eb;
+}
+
+.optionLabel {
+  font-weight: 500;
+  color: var(--font-color-title);
+}
+
+.optionDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
