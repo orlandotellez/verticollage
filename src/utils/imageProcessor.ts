@@ -29,7 +29,9 @@ export const generateCollage = async (
   images: ImageFile[],
   targetWidth: number,
   padding: number,
-  format: ImageFormat = "png"
+  format: ImageFormat = "png",
+  backgroundColor: string = "#000000",
+  transparent: boolean = false
 ): Promise<Blob> => {
   if (images.length === 0) {
     throw new Error("No images to process");
@@ -66,8 +68,12 @@ export const generateCollage = async (
   canvas.width = targetWidth;
   canvas.height = totalHeight;
 
-  ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  if (!transparent) {
+    ctx.fillStyle = backgroundColor;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  } else {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
 
   let currentY = 0;
 

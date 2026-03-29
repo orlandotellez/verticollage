@@ -21,6 +21,8 @@ export default function Home() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [width, setWidth] = useState(1200);
   const [padding, setPadding] = useState(20);
+  const [backgroundColor, setBackgroundColor] = useState('#000000');
+  const [transparent, setTransparent] = useState(false);
   const [format, setFormat] = useState<ImageFormat>('png');
 
   const { theme } = useTheme()
@@ -54,7 +56,7 @@ export default function Home() {
 
     setIsGenerating(true);
     try {
-      const blob = await generateCollage(images, width, padding, format);
+      const blob = await generateCollage(images, width, padding, format, backgroundColor, transparent);
       setCollageBlob(blob);
       setCollageUrl(createPreviewUrl(blob));
     } catch (e) {
@@ -135,8 +137,13 @@ export default function Home() {
             <CollageConfig
               width={width}
               padding={padding}
+              backgroundColor={backgroundColor}
+              transparent={transparent}
+              format={format}
               onWidthChange={setWidth}
               onPaddingChange={setPadding}
+              onBackgroundColorChange={setBackgroundColor}
+              onTransparentChange={setTransparent}
             />
 
             <FormatSelector
