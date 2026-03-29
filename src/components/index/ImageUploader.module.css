@@ -1,0 +1,41 @@
+.dropzone {
+  border: 3px dashed var(--border-color);
+  background-color: var(--card-color);
+  border-radius: 0.5rem;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dropzone:hover {
+  border-color: #3b82f6;
+  background-color: var(--primary-color);
+}
+
+.dropzoneActive {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+  transform: scale(1.02);
+}
+
+.fileInput {
+  display: none;
+}
+
+.icon {
+  margin: 0 auto 1rem;
+  color: #9ca3af;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--font-color-title);
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
